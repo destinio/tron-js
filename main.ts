@@ -1,4 +1,4 @@
-let bike = document.querySelector('main > div') as HTMLElement
+let bike = document.querySelector('.bike') as HTMLElement
 
 const degElement = document.querySelector('#deg') as HTMLElement
 
@@ -42,10 +42,12 @@ function convertKeyToDirection(key: string) {
   }
 }
 
+let glowTime: NodeJS.Timeout = null!
+
 function moveBike(e: Event) {
   const target = e.target as HTMLElement
 
-  bike = document.querySelector('main > div') as HTMLElement
+  bike = document.querySelector('.bike') as HTMLElement
 
   let direction = target.id.length
     ? target.id
@@ -68,6 +70,14 @@ function moveBike(e: Event) {
   console.log({ currentLeft, currentTop, rotateStart })
 
   if (direction === '') return
+
+  bike.classList.add('glow')
+
+  clearTimeout(glowTime)
+
+  glowTime = setTimeout(() => {
+    bike.classList.remove('glow')
+  }, 500)
 
   if (direction === 'd') {
     if (rotateStart === 0) {
