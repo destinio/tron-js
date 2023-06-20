@@ -1,0 +1,72 @@
+:root {
+  --top-start: 17em;
+  --left-start: 9.5em;
+  --rotate-start: 0deg;
+}
+
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  height: 100vh;
+  background-color: #222;
+  color: white;
+  font-size: 1.25rem;
+}
+
+main {
+  position: relative;
+  width: 20.25em;
+  height: 20.25em;
+  background-image: linear-gradient(rgba(0, 157, 255, .5) .2em, transparent .2em), linear-gradient(90deg, rgba(0, 157, 255, .5)
+  .2em, transparent .2em);
+  background-size: 2em 2em
+}
+
+/* Bike */
+main > div {
+  width: 1em;
+  height: 2em;
+  position: absolute;
+  top: var(--top-start);
+  left: var(--left-start);
+  background-color: rgb(56, 109, 232);
+  transform: rotate(var(--rotate-start));
+}
+
+main > div::after {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: aquamarine;
+  /* top: 50%; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 1em;
+
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
