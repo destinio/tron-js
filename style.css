@@ -33,7 +33,10 @@ main {
   z-index: 1;
 }
 
-ul {
+button {
+  background: none;
+  border: none;
+  box-shadow: none;
   font-size: 2em;
 }
 
