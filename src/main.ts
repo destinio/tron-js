@@ -1,5 +1,7 @@
 import { convertKeyToDirection } from './api.js'
 
+let bike = document.querySelector('.bike') as HTMLElement
+
 const northButton = document.querySelector('#n') as HTMLElement
 const southButton = document.querySelector('#s') as HTMLElement
 const eastButton = document.querySelector('#e') as HTMLElement
@@ -63,6 +65,8 @@ gameLoop = setInterval(() => {
 
 function changeDirection(e: Event) {
   e.stopPropagation()
+
+  bike.classList.add('glow')
 
   const target = e.target as HTMLElement
 
