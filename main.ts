@@ -181,5 +181,6 @@ function moveBike(e: Event) {
 r.addEventListener('click', moveBike)
 l.addEventListener('click', moveBike)
 u.addEventListener('click', moveBike)
+d.addEventListener('click', moveBike)
 
 document.addEventListener('keydown', moveBike)
