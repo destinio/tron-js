@@ -2,10 +2,10 @@ let bike = document.querySelector('.bike') as HTMLElement
 
 const degElement = document.querySelector('#deg') as HTMLElement
 
-const l = document.querySelector('#l')
-const r = document.querySelector('#r')
-const u = document.querySelector('#u')
-const d = document.querySelector('#d')
+const l = document.querySelector('#l > button')
+const r = document.querySelector('#r > button')
+const u = document.querySelector('#u > button')
+const d = document.querySelector('#d > button')
 
 const bounding = document.querySelector('main')?.getBoundingClientRect()
 
@@ -49,8 +49,8 @@ function moveBike(e: Event) {
 
   bike = document.querySelector('.bike') as HTMLElement
 
-  let direction = target.id.length
-    ? target.id
+  let direction = target.parentElement.id.length
+    ? target.parentElement.id
     : convertKeyToDirection((e as KeyboardEvent).key)
 
   currentLeft = getComputedStyle(document.documentElement).getPropertyValue(
