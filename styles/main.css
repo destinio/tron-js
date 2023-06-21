@@ -48,7 +48,7 @@ button {
   left: var(--left-start);
   border-radius: 8px;
   transform: rotate(var(--rotate-start));
-  transition: box-shadow .4s ease-in-out;
+  transition: box-shadow .4s ease-in-out, transform .4s ease-in-out;
 }
 
 .glow {
